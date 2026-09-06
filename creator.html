@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Channel | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="creators">
+<div id="site-header"></div>
+<main class="container">
+  <div class="creator-row" style="margin-top:30px;padding:26px" id="ch-head"></div>
+  <div class="tabs">
+    <button class="active">Videos</button><button>Playlists</button><button>About</button>
+  </div>
+  <div class="grid" id="ch-videos" style="padding-bottom:60px"></div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const c = CREATORS.find(x=>x.id===qs("c")) || CREATORS[0];
+  document.title = c.name + " | StreamVault";
+  document.getElementById("ch-head").innerHTML =
+    `<div class="avatar" style="width:76px;height:76px;font-size:36px;background:linear-gradient(135deg,${c.grad[0]},${c.grad[1]})">${c.emoji}</div>
+     <div class="info"><div class="name" style="font-size:22px">${c.name} ${c.verified?'<span class="verified">✔</span>':""}</div>
+     <div style="color:var(--text-faint)">${c.subs} subscribers</div>
+     <div style="color:var(--text-dim);font-size:14px;margin-top:4px">${c.about}</div></div>
+     <button class="btn btn-solid">Subscribe</button>`;
+  grid(document.getElementById("ch-videos"), VIDEOS.filter(v=>v.creator===c.id).sort((a,b)=>a.ago-b.ago));
+});
+</script>
+</body>
+</html>

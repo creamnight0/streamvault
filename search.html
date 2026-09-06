@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="videos">
+<div id="site-header"></div>
+<main class="container">
+  <h1 class="page-title" id="search-title">Search</h1>
+  <p style="text-align:center;color:var(--text-dim)" id="search-sub"></p>
+  <div class="grid" id="search-grid" style="padding:26px 0 60px"></div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const q = (qs("q")||"").trim();
+  document.getElementById("search-title").textContent = q ? `Results for “${q}”` : "Search";
+  const t = q.toLowerCase();
+  const results = q ? VIDEOS.filter(v=>{
+    const c=creatorOf(v), cat=catOf(v);
+    return v.title.toLowerCase().includes(t)||c.name.toLowerCase().includes(t)||cat.name.toLowerCase().includes(t);
+  }) : [];
+  document.getElementById("search-sub").textContent = q ? results.length+" result(s)" : "Type a query in the search bar above.";
+  grid(document.getElementById("search-grid"), results);
+});
+</script>
+</body>
+</html>

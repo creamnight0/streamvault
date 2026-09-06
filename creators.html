@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creators | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="creators">
+<div id="site-header"></div>
+<main class="container">
+  <h1 class="page-title">Creators</h1>
+  <p style="text-align:center;color:var(--text-dim)">The people behind the videos.</p>
+  <div class="creator-grid" id="creator-grid"></div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("creator-grid").innerHTML = CREATORS.map(c=>`
+    <div class="creator-card">
+      <div class="avatar" style="background:linear-gradient(135deg,${c.grad[0]},${c.grad[1]})">${c.emoji}</div>
+      <b>${c.name} ${c.verified?'<span class="verified">✔</span>':""}</b>
+      <p>${c.subs} subscribers</p>
+      <a class="btn btn-outline" href="creator.html?c=${c.id}">View Channel</a>
+    </div>`).join("");
+});
+</script>
+</body>
+</html>

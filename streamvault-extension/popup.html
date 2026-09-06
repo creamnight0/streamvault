@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamVault Clipper</title>
+  <style>
+    :root {
+      --bg: #0d0a08;
+      --card: #17120e;
+      --border: #2a201a;
+      --brand: #e11d48;
+      --brand-hover: #f43f5e;
+      --text: #ffffff;
+      --muted: #a8a29e;
+      --ok: #22c55e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 380px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    .logo {
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo span { color: var(--brand); }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(225, 29, 72, 0.15);
+      color: var(--brand);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+    }
+    .status-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+    .status-title {
+      font-weight: 700;
+      color: var(--ok);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 4px;
+    }
+    .media-source {
+      word-break: break-all;
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 11px;
+      max-height: 48px;
+      overflow-y: auto;
+      background: rgba(0,0,0,0.4);
+      padding: 4px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .field {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--brand);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .btn-import {
+      width: 100%;
+      background: linear-gradient(135deg, var(--brand), #be123c);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4);
+      transition: transform 0.1s ease, filter 0.15s ease;
+      margin-top: 14px;
+    }
+    .btn-import:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+    .btn-import:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .notice {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      display: none;
+    }
+    .notice.success {
+      display: block;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #86efac;
+    }
+    .notice.error {
+      display: block;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+    .link-btn {
+      color: var(--brand);
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <span>▶</span> STREAM<span>VAULT</span>
+    </div>
+    <div class="badge">CLIPPER V1.0</div>
+  </div>
+
+  <div id="statusSection" class="status-box">
+    <div class="status-title" id="statusHeader">
+      <span>⚡</span> Scanning active page...
+    </div>
+    <div class="media-source" id="mediaSourceText">Detecting video stream...</div>
+  </div>
+
+  <form id="importForm">
+    <div class="field">
+      <label>Video Title</label>
+      <input type="text" id="videoTitle" placeholder="Enter video title..." required />
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label>Category</label>
+        <select id="videoCat">
+          <option value="exclusive">Exclusive</option>
+          <option value="4k">4K Ultra HD</option>
+          <option value="cosplay">Cosplay</option>
+          <option value="desi">Desi</option>
+          <option value="latina">Latina</option>
+          <option value="asian">Asian</option>
+          <option value="outdoor">Outdoor</option>
+          <option value="feet">Feet & Style</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Start Timestamp</label>
+        <input type="number" id="videoStartTime" value="5" min="0" step="1" title="Initial video start time in seconds" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Creator / Channel</label>
+      <input type="text" id="videoCreator" value="streamvault" placeholder="Channel ID or name..." />
+    </div>
+
+    <div class="field">
+      <label>Tags (comma separated)</label>
+      <input type="text" id="videoTags" placeholder="exclusive, hd, popular..." />
+    </div>
+
+    <button type="submit" class="btn-import" id="btnImport">
+      <span>⚡</span> Ingest & Save to StreamVault
+    </button>
+  </form>
+
+  <div class="notice" id="noticeBox"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

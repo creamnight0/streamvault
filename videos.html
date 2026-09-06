@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Videos | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="videos">
+<div id="site-header"></div>
+<main class="container">
+  <h1 class="page-title">Videos</h1>
+
+  <div class="tabs" id="video-tabs">
+    <button data-tab="recent" class="active">Most Recent</button>
+    <button data-tab="viewed">Most Viewed</button>
+    <button data-tab="rated">Best Rated</button>
+    <button data-tab="originals">Originals</button>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="side-card">
+        <h3>Duration <span>minutes</span></h3>
+        <div class="duration-slider">
+          <input type="range" id="dur-range" min="0" max="60" step="5" value="60">
+          <div class="duration-ticks"><span>0</span><span>10</span><span>20</span><span>30</span><span>45</span><span>60+</span></div>
+          <div style="color:var(--text-faint);font-size:12.5px;margin-top:6px">Up to <b id="dur-label">any length</b></div>
+        </div>
+      </div>
+      <div class="side-card">
+        <h3>Categories</h3>
+        <ul class="cat-list" id="side-cats"></ul>
+      </div>
+    </aside>
+
+    <section>
+      <div class="grid" id="video-grid"></div>
+    </section>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const state = { tab:"recent", cat:"all", maxMins:60 };
+  const gridEl = document.getElementById("video-grid");
+  const total = CATEGORIES.reduce((s,c)=>s+c.count,0);
+
+  const cats = document.getElementById("side-cats");
+  cats.innerHTML =
+    `<li><a href="#" data-cat="all" class="active">All <span class="count">${total.toLocaleString()}</span></a></li>` +
+    CATEGORIES.map(c=>`<li><a href="#" data-cat="${c.slug}">${c.name} <span class="count">${c.count.toLocaleString()}</span></a></li>`).join("");
+
+  function apply(){
+    let list = [...VIDEOS];
+    if(state.cat!=="all") list = list.filter(v=>v.cat===state.cat);
+    if(state.maxMins<60)  list = list.filter(v=>v.mins<=state.maxMins);
+    if(state.tab==="viewed")    list.sort((a,b)=>b.views-a.views);
+    else if(state.tab==="rated")list.sort((a,b)=>b.rating-a.rating);
+    else if(state.tab==="originals"){ list = list.filter(v=>v.exclusive); list.sort((a,b)=>a.ago-b.ago); }
+    else list.sort((a,b)=>a.ago-b.ago);
+    grid(gridEl, list);
+  }
+
+  document.getElementById("video-tabs").addEventListener("click", e=>{
+    const b = e.target.closest("button"); if(!b) return;
+    document.querySelectorAll("#video-tabs button").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active"); state.tab=b.dataset.tab; apply();
+  });
+  cats.addEventListener("click", e=>{
+    const a = e.target.closest("a"); if(!a) return;
+    e.preventDefault();
+    cats.querySelectorAll("a").forEach(x=>x.classList.remove("active"));
+    a.classList.add("active"); state.cat=a.dataset.cat; apply();
+  });
+  const range = document.getElementById("dur-range");
+  range.addEventListener("input", ()=>{
+    state.maxMins=+range.value;
+    document.getElementById("dur-label").textContent = state.maxMins>=60?"any length":state.maxMins+" min";
+    apply();
+  });
+
+  apply();
+});
+</script>
+</body>
+</html>

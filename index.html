@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="StreamVault — a curated video platform. Trending videos, top creators, and original series. 18+ only.">
+<title>StreamVault — Watch Videos Online</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+<div id="site-header"></div>
+<main class="container">
+
+  <section class="hero">
+    <h1>Premium videos, <em>hand-picked</em> and beautifully streamed</h1>
+    <p>Every video on StreamVault is uploaded by our own studio — curated, quality-checked, and compressed without losing a pixel.</p>
+    <a class="btn btn-solid" href="videos.html">Start Watching ▶</a>
+    <a class="btn btn-ghost" href="trending.html" style="margin-left:10px">🔥 See What's Trending</a>
+  </section>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="side-card">
+        <h3>Categories</h3>
+        <ul class="cat-list" id="home-cats"></ul>
+      </div>
+      <div class="side-card">
+        <h3>From the Blog</h3>
+        <ul class="cat-list" id="home-blog-links"></ul>
+      </div>
+    </aside>
+
+    <div class="home-main">
+      <section class="section" style="margin-top:0">
+        <div class="section-head"><h2>🔥 Trending Now</h2><a href="trending.html">View all →</a></div>
+        <div class="grid" id="row-trending"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>🌶️ Trending in Desi</h2><a href="category.html?cat=desi">View all →</a></div>
+        <div class="grid" id="row-desi"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>🆕 Recently Uploaded</h2><a href="videos.html">View all →</a></div>
+        <div class="grid" id="row-recent"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>⭐ StreamVault Originals</h2><a href="videos.html">View all →</a></div>
+        <div class="grid" id="row-originals"></div>
+      </section>
+    </div>
+  </div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("home-cats").innerHTML = catListHTML("");
+  document.getElementById("home-blog-links").innerHTML =
+    BLOG_POSTS.map(p=>`<li><a href="blog-post.html?p=${p.slug}">${p.emoji} ${p.title}</a></li>`).join("");
+  grid(document.getElementById("row-trending"), [...VIDEOS].sort((a,b)=>b.views-a.views).slice(0,4));
+  grid(document.getElementById("row-desi"),     VIDEOS.filter(v=>v.cat==="desi").slice(0,4));
+  grid(document.getElementById("row-recent"),   [...VIDEOS].sort((a,b)=>a.ago-b.ago).slice(0,4));
+  grid(document.getElementById("row-originals"),VIDEOS.filter(v=>v.exclusive).slice(0,4));
+});
+</script>
+</body>
+</html>

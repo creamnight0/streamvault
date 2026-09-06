@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playlists | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="playlists">
+<div id="site-header"></div>
+<main class="container">
+  <h1 class="page-title">Playlists</h1>
+  <p style="text-align:center;color:var(--text-dim)">Curated collections from creators and the community.</p>
+  <div class="cat-grid" id="pl-grid" style="padding-top:26px"></div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+const PLAYLISTS = [
+  {name:"Weekend Binge: Best Documentaries", n:12, emoji:"🎞️", cat:"documentary"},
+  {name:"Learn Guitar in 30 Days", n:30, emoji:"🎸", cat:"music"},
+  {name:"Speedrun Legends", n:18, emoji:"⏱️", cat:"gaming"},
+  {name:"5-Ingredient Dinners", n:24, emoji:"🍳", cat:"cooking"},
+  {name:"Space Explained", n:15, emoji:"🚀", cat:"science"},
+  {name:"Beginner Home Workouts", n:20, emoji:"💪", cat:"fitness"},
+  {name:"Southeast Asia Travel Guides", n:9, emoji:"✈️", cat:"travel"},
+  {name:"PC Building 101", n:11, emoji:"🖥️", cat:"technology"},
+];
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("pl-grid").innerHTML = PLAYLISTS.map(p=>`
+    <a class="cat-tile" href="category.html?cat=${p.cat}">
+      <span class="emoji">${p.emoji}</span><b>${p.name}</b><span>${p.n} videos</span>
+    </a>`).join("");
+});
+</script>
+</body>
+</html>

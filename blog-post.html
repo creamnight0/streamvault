@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="blog">
+<div id="site-header"></div>
+<main>
+  <article class="article" id="article"></article>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const p = BLOG_POSTS.find(x=>x.slug===qs("p")) || BLOG_POSTS[0];
+  document.title = p.title + " | StreamVault";
+  document.getElementById("article").innerHTML = `
+    <span class="tag">${p.tag}</span>
+    <h1>${p.title}</h1>
+    <div class="date">${p.date} · StreamVault Team</div>
+    <div class="post-card" style="pointer-events:none;margin-bottom:26px"><div class="cover" style="background:linear-gradient(135deg,${p.grad[0]},${p.grad[1]})">${p.emoji}</div></div>
+    ${p.body.map(par=>`<p>${par}</p>`).join("")}
+    <p style="margin-top:30px"><a href="blog.html" style="color:var(--accent-2);font-weight:700">← Back to the blog</a></p>`;
+});
+</script>
+</body>
+</html>

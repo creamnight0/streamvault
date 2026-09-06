@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trending | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="trending">
+<div id="site-header"></div>
+<main class="container">
+  <h1 class="page-title">🔥 Trending</h1>
+  <p style="text-align:center;color:var(--text-dim)">The most-watched videos on StreamVault right now.</p>
+  <div class="grid" id="trend-grid" style="padding:26px 0 60px"></div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  grid(document.getElementById("trend-grid"), [...VIDEOS].sort((a,b)=>b.views-a.views));
+});
+</script>
+</body>
+</html>

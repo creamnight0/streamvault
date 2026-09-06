@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watch | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="videos">
+<div id="site-header"></div>
+<main class="container">
+  <div class="watch">
+    <section>
+      <div class="player"><video id="player" controls preload="metadata"></video></div>
+      <h1 id="w-title"></h1>
+      <div class="watch-meta" id="w-meta"></div>
+      <div class="watch-actions">
+        <button class="btn btn-ghost" id="like-btn">👍 Like</button>
+        <button class="btn btn-ghost">👎</button>
+        <button class="btn btn-ghost">🔗 Share</button>
+        <button class="btn btn-ghost">➕ Save</button>
+        <a class="btn btn-ghost" href="content-removal.html">🚩 Report</a>
+      </div>
+      <div class="creator-row" id="w-creator"></div>
+      <div class="desc-box" id="w-desc"></div>
+
+      <div class="comments">
+        <h3>Comments (3)</h3>
+        <div class="comment-input">
+          <div class="avatar" style="background:linear-gradient(135deg,#22d3ee,#8b5cf6)">🙂</div>
+          <input placeholder="Add a comment… (sign in required)">
+        </div>
+        <div class="comment">
+          <div class="avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">🦊</div>
+          <div class="body"><b>foxtail_88</b><span>2 hours ago</span><p>The editing on this one is next level. Instant subscribe.</p></div>
+        </div>
+        <div class="comment">
+          <div class="avatar" style="background:linear-gradient(135deg,#34d399,#0ea5e9)">🌊</div>
+          <div class="body"><b>wavelength</b><span>4 hours ago</span><p>Came for the thumbnail, stayed for the whole thing. Great pacing.</p></div>
+        </div>
+        <div class="comment">
+          <div class="avatar" style="background:linear-gradient(135deg,#a78bfa,#f471b5)">🌸</div>
+          <div class="body"><b>sakura.codes</b><span>6 hours ago</span><p>Can you do a follow-up on this? Would love a deeper dive.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="upnext">
+      <h3>Up Next</h3>
+      <div id="upnext-list"></div>
+    </aside>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const id = parseInt(qs("v")) || 1;
+  const v = VIDEOS.find(x=>x.id===id) || VIDEOS[0];
+  const c = creatorOf(v), cat = catOf(v);
+
+  document.title = v.title + " | StreamVault";
+  const player = document.getElementById("player");
+  if (v.thumb) player.poster = v.thumb;
+  const src = v.streamUrl || v.src || v.embed || SAMPLE_SRC[v.id % SAMPLE_SRC.length];
+  const isHls = /\.m3u8(\?|$)/i.test(src) || src.includes('/hls/');
+  if (isHls && window.Hls && Hls.isSupported()) {
+    const hls = new Hls({ lowLatencyMode: true });
+    hls.loadSource(src);
+    hls.attachMedia(player);
+  } else {
+    player.src = src;
+  }
+  document.getElementById("w-title").textContent = v.title;
+  document.getElementById("w-meta").innerHTML =
+    `<span>👁 ${fmtViews(v.views)} views</span><span>❤ ${fmtViews(v.likes)}</span>
+     <span>★ ${v.rating}</span><span>${fmtAgo(v.ago)}</span>
+     <a href="category.html?cat=${cat.slug}" style="color:var(--accent)">${cat.emoji} ${cat.name}</a>
+     ${v.q?`<span class="badge">${v.q}</span>`:""} ${v.exclusive?`<span class="badge" style="background:var(--pink);color:#fff">ORIGINAL</span>`:""}`;
+  document.getElementById("w-creator").innerHTML =
+    `<div class="avatar" style="background:linear-gradient(135deg,${c.grad[0]},${c.grad[1]})">${c.emoji}</div>
+     <div class="info"><a class="name" href="creator.html?c=${c.id}">${c.name} ${c.verified?'<span class="verified">✔</span>':""}</a>
+     <div style="color:var(--text-faint);font-size:13px">${c.subs} subscribers</div></div>
+     <button class="btn btn-solid">Subscribe</button>`;
+  document.getElementById("w-desc").innerHTML = v.desc
+    ? `${v.desc.replace(/</g,"&lt;")}<br><br>Uploaded ${fmtAgo(v.ago)} in <a href="category.html?cat=${cat.slug}">${cat.name}</a>.${v.tags?`<br>Tags: ${v.tags.replace(/</g,"&lt;")}`:""}`
+    : `${c.about}<br><br>Uploaded ${fmtAgo(v.ago)} in <a href="category.html?cat=${cat.slug}">${cat.name}</a>. Demo description — sample video courtesy of the Blender Foundation / Google sample media library.`;
+
+  const others = VIDEOS.filter(x=>x.id!==v.id && (x.cat===v.cat || x.creator===v.creator));
+  const rest = VIDEOS.filter(x=>x.id!==v.id && !others.includes(x));
+  document.getElementById("upnext-list").innerHTML = [...others,...rest].slice(0,8).map(videoCard).join("");
+
+  let liked=false;
+  document.getElementById("like-btn").addEventListener("click", e=>{
+    liked=!liked;
+    e.currentTarget.textContent = liked ? "👍 Liked ("+fmtViews(v.likes+1)+")" : "👍 Like";
+    e.currentTarget.style.color = liked ? "var(--accent)" : "";
+  });
+});
+</script>
+</body>
+</html>

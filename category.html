@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Category | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="categories">
+<div id="site-header"></div>
+<main class="container">
+  <h1 class="page-title" id="cat-title">Category</h1>
+  <p style="text-align:center;color:var(--text-dim)" id="cat-sub"></p>
+  <div class="tabs" id="cat-tabs">
+    <button data-tab="recent" class="active">Most Recent</button>
+    <button data-tab="viewed">Most Viewed</button>
+    <button data-tab="rated">Best Rated</button>
+  </div>
+  <div class="grid" id="cat-videos" style="padding-bottom:60px"></div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slug = qs("cat") || "gaming";
+  const cat = CATEGORIES.find(c=>c.slug===slug) || CATEGORIES[0];
+  document.title = cat.name + " | StreamVault";
+  document.getElementById("cat-title").textContent = cat.emoji+" "+cat.name;
+  document.getElementById("cat-sub").textContent = cat.count.toLocaleString()+" videos in this category";
+  let tab="recent";
+  function apply(){
+    let list = VIDEOS.filter(v=>v.cat===cat.slug);
+    if(tab==="viewed") list.sort((a,b)=>b.views-a.views);
+    else if(tab==="rated") list.sort((a,b)=>b.rating-a.rating);
+    else list.sort((a,b)=>a.ago-b.ago);
+    grid(document.getElementById("cat-videos"), list);
+  }
+  document.getElementById("cat-tabs").addEventListener("click", e=>{
+    const b=e.target.closest("button"); if(!b) return;
+    document.querySelectorAll("#cat-tabs button").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active"); tab=b.dataset.tab; apply();
+  });
+  apply();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Sign In | StreamVault</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="">
+<div id="site-header"></div>
+<main class="container">
+  <div class="form-card">
+    <h1>Studio sign in</h1>
+    <p class="sub">Admin access only — StreamVault is a curated platform and does not accept public uploads.</p>
+    <div class="field"><label>Email</label><input type="email" id="li-email" placeholder="admin@streamvault.example"></div>
+    <div class="field"><label>Password</label><input type="password" id="li-pass" placeholder="••••••••"></div>
+    <button class="btn btn-solid" id="li-btn">Sign In</button>
+    <div class="notice" style="margin-top:18px">Demo mode: any email and password signs you in. In production, wire this to real authentication (with 2FA) on your backend.</div>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("li-btn").addEventListener("click", ()=>{
+    if(!document.getElementById("li-email").value.trim() || !document.getElementById("li-pass").value){
+      alert("Enter an email and password."); return;
+    }
+    storeSet("sv-admin", true);
+    location.href = "admin.html";
+  });
+});
+</script>
+</body>
+</html>
