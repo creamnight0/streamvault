@@ -28,20 +28,23 @@ export const LEGAL_LINKS = [
 
 export function Logo({ small }) {
   return (
-    <Link className="logo" to="/" style={small ? { fontSize: 18 } : undefined}>
+    <Link className="logo" to="/" style={small ? { fontSize: 17 } : undefined}>
       <img
         src="/logo.png"
         alt="Midnight Clips"
+        className="logo-img"
         style={{
-          width: small ? 28 : 36,
-          height: small ? 28 : 36,
-          borderRadius: '50%',
-          objectFit: 'cover',
+          height: small ? 28 : 40,
+          width: small ? 28 : 40,
           display: 'block',
-          boxShadow: '0 2px 10px rgba(168, 85, 247, 0.35)',
+          objectFit: 'contain',
+          filter: 'drop-shadow(0 2px 6px rgba(168, 85, 247, 0.3))',
         }}
       />
-      <span>MIDNIGHT<b>CLIPS</b></span>
+      <span className="logo-text">
+        <span className="logo-word-midnight">MIDNIGHT</span>
+        <span className="logo-word-clips">CLIPS</span>
+      </span>
     </Link>
   )
 }
