@@ -444,8 +444,10 @@ export default function StreamPlayer({
           e.currentTarget.style.background = 'rgba(15, 12, 10, 0.95)'
         }}
       >
-        <img src="/logo.png" alt="Midnight Clips" style={{ width: 16, height: 16, objectFit: 'contain', display: 'block' }} />
-        <span>MIDNIGHT <span style={{ color: '#ec4899' }}>CLIPS</span></span>
+        <img src="/logo.png" alt="Midnight Clips" style={{ width: 18, height: 18, objectFit: 'contain', display: 'block' }} />
+        <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 900, fontStyle: 'italic', fontSize: 11, letterSpacing: '0.4px' }}>
+          MIDNIGHT <span style={{ color: '#ff007f' }}>CLIPS</span>
+        </span>
       </div>
 
       {isLive && (

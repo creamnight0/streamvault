@@ -17,8 +17,6 @@ streamvault-react/server/data/thumbs/*
 !streamvault-react/server/data/thumbs/.gitkeep
 
 # Environment variables & local configs
-.env
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -36,4 +34,4 @@ lerna-debug.log*
 Thumbs.db
 .claude/
 .idea/
-.vscode/
+config.bat
