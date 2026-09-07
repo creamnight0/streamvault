@@ -12,7 +12,7 @@ export default function Categories() {
   return (
     <div className="container">
       <h1 className="page-title">Categories</h1>
-      <p className="page-sub">Browse every corner of StreamVault.</p>
+      <p className="page-sub">Browse every corner of Midnight Clips.</p>
       <div className="cat-grid">
         {categories.map((c) => (
           <Link className="cat-tile" key={c.slug} to={`/category/${c.slug}`}>

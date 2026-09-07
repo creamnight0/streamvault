@@ -12,10 +12,10 @@ export default function Login() {
     <div className="container">
       <div className="form-card">
         <h1><Lock size={20} /> Studio sign in</h1>
-        <p className="sub">Admin access only — StreamVault is a curated platform and does not accept public uploads.</p>
+        <p className="sub">Admin access only — Midnight Clips is a curated platform and does not accept public uploads.</p>
         <div className="field">
           <label>Email</label>
-          <input type="email" placeholder="admin@streamvault.example" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="email" placeholder="admin@midnightclips.example" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="field">
           <label>Password</label>

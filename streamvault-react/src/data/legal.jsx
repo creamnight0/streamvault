@@ -8,14 +8,14 @@ const ul = (...items) => `<ul>${items.map((i) => `<li>${i}</li>`).join('')}</ul>
 export const LEGAL_PAGES = {
   terms: {
     title: 'Terms of Service',
-    intro: '<p>These Terms of Service (“Terms”) govern your access to and use of StreamVault, including our websites, apps, and services (collectively, the “Service”). By using the Service you agree to these Terms. <strong>This is a demonstration website; these terms are template text, not legal advice.</strong></p>',
+    intro: '<p>These Terms of Service (“Terms”) govern your access to and use of Midnight Clips, including our websites, apps, and services (collectively, the “Service”). By using the Service you agree to these Terms. <strong>This is a demonstration website; these terms are template text, not legal advice.</strong></p>',
     body: [
       sec('1. Who May Use the Service',
-        'You must be at least 18 years old to use StreamVault. Access is gated per our <a href="/age-assurance">Age Assurance Policy</a>.'),
+        'You must be at least 18 years old to use Midnight Clips. Access is gated per our <a href="/age-assurance">Age Assurance Policy</a>.'),
       sec('2. Your Account',
         'You are responsible for safeguarding your account credentials and for all activity under your account. Notify us immediately of any unauthorized use. We may suspend or terminate accounts that violate these Terms.'),
       sec('3. Content',
-        'All content on StreamVault is published by the platform operator. We own or hold written licenses for everything we publish, with documented performer consent and age verification, and each item complies with our <a href="/content-guidelines">Content Guidelines</a> and <a href="/content-submission-guidelines">Content Submission Guidelines</a>.'),
+        'All content on Midnight Clips is published by the platform operator. We own or hold written licenses for everything we publish, with documented performer consent and age verification, and each item complies with our <a href="/content-guidelines">Content Guidelines</a> and <a href="/content-submission-guidelines">Content Submission Guidelines</a>.'),
       sec('4. Prohibited Conduct',
         ul('Downloading, scraping, re-uploading, or redistributing content from the Service',
           'Circumventing age restrictions, geo-restrictions, or technical protection measures',
@@ -29,17 +29,17 @@ export const LEGAL_PAGES = {
       sec('7. Premium Subscriptions',
         'Paid subscriptions renew automatically until cancelled. Prices, billing periods, and refund rights are shown at the point of purchase and may vary by region.'),
       sec('8. Disclaimers & Limitation of Liability',
-        'The Service is provided “as is” without warranties of any kind. To the maximum extent permitted by law, StreamVault is not liable for indirect, incidental, or consequential damages arising from your use of the Service.'),
+        'The Service is provided “as is” without warranties of any kind. To the maximum extent permitted by law, Midnight Clips is not liable for indirect, incidental, or consequential damages arising from your use of the Service.'),
       sec('9. Changes to These Terms',
         'We may update these Terms from time to time. We will notify you of material changes; continued use after changes take effect constitutes acceptance.'),
       sec('10. Contact',
-        'Questions about these Terms: <a href="mailto:legal@streamvault.example">legal@streamvault.example</a>.'),
+        'Questions about these Terms: <a href="mailto:legal@midnightclips.example">legal@midnightclips.example</a>.'),
     ].join(''),
   },
 
   privacy: {
     title: 'Privacy Policy',
-    intro: '<p>This Privacy Policy explains what information StreamVault collects, how we use it, and the choices you have. <strong>Template text for a demo site.</strong></p>',
+    intro: '<p>This Privacy Policy explains what information Midnight Clips collects, how we use it, and the choices you have. <strong>Template text for a demo site.</strong></p>',
     body: [
       sec('1. Information We Collect',
         ul('<strong>Account data</strong> — username, email address, date of birth, password (hashed)',
@@ -60,13 +60,13 @@ export const LEGAL_PAGES = {
       sec('5. Data Retention',
         'We keep personal data only as long as needed for the purposes described here or as required by law. You can delete your account at any time from account settings; deletion requests are honored within 30 days, subject to legal retention obligations.'),
       sec('6. Your Rights',
-        'Depending on your location, you may have rights to access, correct, delete, port, or object to processing of your personal data. Submit requests to <a href="mailto:privacy@streamvault.example">privacy@streamvault.example</a>. You may also lodge a complaint with your data protection authority.'),
+        'Depending on your location, you may have rights to access, correct, delete, port, or object to processing of your personal data. Submit requests to <a href="mailto:privacy@midnightclips.example">privacy@midnightclips.example</a>. You may also lodge a complaint with your data protection authority.'),
       sec('7. International Transfers',
         'Where data is transferred across borders, we use appropriate safeguards such as standard contractual clauses.'),
       sec('8. Children',
         'The Service is strictly 18+ and not directed to minors. See our <a href="/child-safety">Child Safety Policy</a>.'),
       sec('9. Contact',
-        'Data controller: StreamVault Ltd. • <a href="mailto:privacy@streamvault.example">privacy@streamvault.example</a>'),
+        'Data controller: Midnight Clips Ltd. • <a href="mailto:privacy@midnightclips.example">privacy@midnightclips.example</a>'),
     ].join(''),
   },
 
@@ -80,23 +80,23 @@ export const LEGAL_PAGES = {
       sec('Uploader Responsibility',
         'All content is published by the platform operator, who certifies at the time of each submission that it complies with all applicable laws, our <a href="/content-guidelines">Content Guidelines</a>, and our <a href="/content-submission-guidelines">Content Submission Guidelines</a>.'),
       sec('Custodian of Records',
-        'Requests concerning this statement may be directed to:<br>Custodian of Records, StreamVault Ltd.<br>123 Example Street, Suite 100, Example City, EX 00000<br><a href="mailto:records@streamvault.example">records@streamvault.example</a>'),
+        'Requests concerning this statement may be directed to:<br>Custodian of Records, Midnight Clips Ltd.<br>123 Example Street, Suite 100, Example City, EX 00000<br><a href="mailto:records@midnightclips.example">records@midnightclips.example</a>'),
     ].join(''),
   },
 
   dmca: {
     title: 'DMCA / Copyright Policy',
-    intro: '<p>StreamVault respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). <strong>Template text for a demo site.</strong></p>',
+    intro: '<p>Midnight Clips respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). <strong>Template text for a demo site.</strong></p>',
     body: [
       sec('1. Filing a Copyright Notice',
-        'If you believe content on StreamVault infringes your copyright, send a notice containing:',
+        'If you believe content on Midnight Clips infringes your copyright, send a notice containing:',
         ul('Identification of the copyrighted work claimed to be infringed',
-          'The URL(s) of the allegedly infringing material on StreamVault',
+          'The URL(s) of the allegedly infringing material on Midnight Clips',
           'Your name, address, telephone number, and email address',
           'A statement that you have a good-faith belief the use is not authorized by the copyright owner, its agent, or the law',
           'A statement, under penalty of perjury, that the information is accurate and you are the owner or authorized to act for the owner',
           'Your physical or electronic signature'),
-        'Send notices to our designated agent: <a href="mailto:dmca@streamvault.example">dmca@streamvault.example</a>, or DMCA Agent, StreamVault Ltd., 123 Example Street, Suite 100, Example City, EX 00000.'),
+        'Send notices to our designated agent: <a href="mailto:dmca@midnightclips.example">dmca@midnightclips.example</a>, or DMCA Agent, Midnight Clips Ltd., 123 Example Street, Suite 100, Example City, EX 00000.'),
       sec('2. Counter-Notification',
         'If your content was removed and you believe it was removed in error, you may file a counter-notification including the material\'s prior URL, a statement under penalty of perjury of good-faith belief that removal was mistaken, your contact details, consent to jurisdiction, and your signature. If the claimant does not file a court action within 10–14 business days, the content may be restored.'),
       sec('3. Repeat Infringement',
@@ -108,7 +108,7 @@ export const LEGAL_PAGES = {
 
   'content-production-guide': {
     title: 'Content Production Guide',
-    intro: '<p>Best practices for producing content that performs well on StreamVault and sails through review. This guide is advisory; the binding rules live in the <a href="/content-guidelines">Content Guidelines</a> and <a href="/content-submission-guidelines">Content Submission Guidelines</a>.</p>',
+    intro: '<p>Best practices for producing content that performs well on Midnight Clips and sails through review. This guide is advisory; the binding rules live in the <a href="/content-guidelines">Content Guidelines</a> and <a href="/content-submission-guidelines">Content Submission Guidelines</a>.</p>',
     body: [
       sec('1. Before You Film',
         ul('Secure written permission from every identifiable person appearing in your video',
@@ -142,7 +142,7 @@ export const LEGAL_PAGES = {
           'The publisher must be the rights holder or hold written authorization for all content submitted')),
       sec('2. Mandatory Certifications at Upload',
         'At the time of each submission the publisher must certify that:',
-        ul('Every identifiable person in the video has consented in writing to appear and to distribution on StreamVault',
+        ul('Every identifiable person in the video has consented in writing to appear and to distribution on Midnight Clips',
           'Every performer\'s age has been verified and documented per the <a href="/2257">2257 Statement</a>',
           'The content involves no minors in any form (see <a href="/child-safety">Child Safety Policy</a>)',
           'The content does not infringe any third-party rights',
@@ -160,10 +160,10 @@ export const LEGAL_PAGES = {
 
   'uk-users': {
     title: 'Information for Users in the UK',
-    intro: '<p>This page explains how StreamVault complies with the UK Online Safety Act 2023 (OSA) and what UK users can expect. <strong>Template text for a demo site.</strong></p>',
+    intro: '<p>This page explains how Midnight Clips complies with the UK Online Safety Act 2023 (OSA) and what UK users can expect. <strong>Template text for a demo site.</strong></p>',
     body: [
       sec('1. Our Duties Under the Online Safety Act',
-        'As a service accessible in the UK, StreamVault takes proportionate measures to protect users from illegal content and to prevent children from accessing the service. This includes proactive detection technology, robust reporting tools, and age assurance.'),
+        'As a service accessible in the UK, Midnight Clips takes proportionate measures to protect users from illegal content and to prevent children from accessing the service. This includes proactive detection technology, robust reporting tools, and age assurance.'),
       sec('2. Age Assurance',
         'UK law requires that adult content only be shown to adults using highly effective age assurance. We apply the measures described in our <a href="/age-assurance">Age Assurance Policy</a>; we do not rely on self-declaration alone.'),
       sec('3. Reporting and Complaints',
@@ -171,13 +171,13 @@ export const LEGAL_PAGES = {
       sec('4. Terms Clarity',
         'Our <a href="/terms">Terms of Service</a> and <a href="/content-guidelines">Content Guidelines</a> describe what is and is not allowed on the platform and how our systems enforce those rules.'),
       sec('5. Regulator',
-        'The UK regulator for online safety is Ofcom (<a href="https://www.ofcom.org.uk" rel="noopener">ofcom.org.uk</a>). UK users may contact us about OSA matters at <a href="mailto:uk-safety@streamvault.example">uk-safety@streamvault.example</a>.'),
+        'The UK regulator for online safety is Ofcom (<a href="https://www.ofcom.org.uk" rel="noopener">ofcom.org.uk</a>). UK users may contact us about OSA matters at <a href="mailto:uk-safety@midnightclips.example">uk-safety@midnightclips.example</a>.'),
     ].join(''),
   },
 
   'child-safety': {
     title: 'Child Safety Policy',
-    intro: '<p>StreamVault has a <strong>zero-tolerance policy</strong> toward child sexual abuse material (CSAM) and any content that endangers, exploits, or sexualizes minors.</p>',
+    intro: '<p>Midnight Clips has a <strong>zero-tolerance policy</strong> toward child sexual abuse material (CSAM) and any content that endangers, exploits, or sexualizes minors.</p>',
     body: [
       sec('1. Prohibited Absolutely',
         ul('Child sexual abuse material of any kind, real or simulated, including AI-generated imagery',
@@ -190,7 +190,7 @@ export const LEGAL_PAGES = {
           'Detected or reported CSAM is removed immediately and evidence is preserved',
           'We report CSAM to the National Center for Missing &amp; Exploited Children (NCMEC) and cooperate with law enforcement worldwide (see <a href="/law-enforcement">Law Enforcement Requests</a>)')),
       sec('3. How to Report',
-        'Use the Report button on any video, or the <a href="/illegal-content-reporting">Illegal Content Reporting</a> channel, or email <a href="mailto:childsafety@streamvault.example">childsafety@streamvault.example</a>. Reports in this category are triaged ahead of all other queues, 24/7.',
+        'Use the Report button on any video, or the <a href="/illegal-content-reporting">Illegal Content Reporting</a> channel, or email <a href="mailto:childsafety@midnightclips.example">childsafety@midnightclips.example</a>. Reports in this category are triaged ahead of all other queues, 24/7.',
         'You can also report directly to NCMEC at <a href="https://report.cybertip.org" rel="noopener">report.cybertip.org</a> or to your national hotline via <a href="https://www.inhope.org" rel="noopener">INHOPE</a>.'),
       sec('4. Keeping Minors Off the Platform',
         'The Service is strictly 18+. Access is gated per our <a href="/age-assurance">Age Assurance Policy</a>.'),
@@ -199,7 +199,7 @@ export const LEGAL_PAGES = {
 
   'illegal-content-reporting': {
     title: 'Illegal Content Reporting Policy',
-    intro: '<p>This policy describes how anyone — users or non-users — can report content they believe is illegal, and how StreamVault handles such reports.</p>',
+    intro: '<p>This policy describes how anyone — users or non-users — can report content they believe is illegal, and how Midnight Clips handles such reports.</p>',
     body: [
       sec('1. What to Report Here',
         ul('Child sexual abuse or exploitation (see also <a href="/child-safety">Child Safety Policy</a>)',
@@ -212,7 +212,7 @@ export const LEGAL_PAGES = {
       sec('2. How to Report',
         ul('<strong>In-product:</strong> the Report button on every video and comment',
           '<strong>Web form:</strong> the <a href="/content-removal">Content Removal Request</a> form (select “Illegal content”)',
-          '<strong>Email:</strong> <a href="mailto:legal-reports@streamvault.example">legal-reports@streamvault.example</a> — include URLs and a description')),
+          '<strong>Email:</strong> <a href="mailto:legal-reports@midnightclips.example">legal-reports@midnightclips.example</a> — include URLs and a description')),
       sec('3. What Happens Next',
         ul('Reports of CSAM and imminent-harm content are triaged 24/7 with priority handling',
           'Confirmed illegal content is removed and hashes are added to prevention databases',
@@ -225,17 +225,17 @@ export const LEGAL_PAGES = {
 
   'age-assurance': {
     title: 'Age Assurance Policy',
-    intro: '<p>This policy explains how StreamVault verifies age, and how we protect the data involved.</p>',
+    intro: '<p>This policy explains how Midnight Clips verifies age, and how we protect the data involved.</p>',
     body: [
       sec('1. Why We Check Age',
-        'StreamVault is an 18+ service. Laws in several jurisdictions — including the UK Online Safety Act — require highly effective age assurance rather than simple self-declaration.'),
+        'Midnight Clips is an 18+ service. Laws in several jurisdictions — including the UK Online Safety Act — require highly effective age assurance rather than simple self-declaration.'),
       sec('2. Methods We Use',
         ul('<strong>Facial age estimation</strong> via an accredited third-party provider — images are processed transiently and never stored',
           '<strong>ID document verification</strong> through a certified verification partner, as an alternative option',
           '<strong>Digital identity / reusable age credentials</strong> where available in your region'),
         'You can choose among the methods available in your region; no single method is mandatory where alternatives exist.'),
       sec('3. Data Protection',
-        ul('Age assurance is performed by specialist providers under strict contracts; StreamVault receives only a yes/no age signal, never your documents or biometric data',
+        ul('Age assurance is performed by specialist providers under strict contracts; Midnight Clips receives only a yes/no age signal, never your documents or biometric data',
           'Verification data is deleted by the provider after the check completes, subject to legal retention minimums',
           'Age signals are stored as a simple over/under flag against your session or account')),
       sec('4. If a Check Fails',
@@ -253,7 +253,7 @@ export const LEGAL_PAGES = {
           'Age assurance outcomes',
           'Account restrictions')),
       sec('2. How to Appeal',
-        'Every enforcement notification includes an <strong>Appeal</strong> link. Alternatively, email <a href="mailto:appeals@streamvault.example">appeals@streamvault.example</a> with the video URL or case number and a short explanation. Appeals must be filed within 60 days of the decision.'),
+        'Every enforcement notification includes an <strong>Appeal</strong> link. Alternatively, email <a href="mailto:appeals@midnightclips.example">appeals@midnightclips.example</a> with the video URL or case number and a short explanation. Appeals must be filed within 60 days of the decision.'),
       sec('3. How Appeals Are Handled',
         ul('Appeals are reviewed by a human moderator who was not involved in the original decision',
           'We aim to resolve appeals within 7 days; complex cases may take up to 30 days',
@@ -266,10 +266,10 @@ export const LEGAL_PAGES = {
 
   'law-enforcement': {
     title: 'Law Enforcement Requests',
-    intro: '<p>This page describes how law enforcement agencies may request user data or content preservation from StreamVault, and the standards we apply.</p>',
+    intro: '<p>This page describes how law enforcement agencies may request user data or content preservation from Midnight Clips, and the standards we apply.</p>',
     body: [
       sec('1. Where to Send Requests',
-        'Official requests should be submitted from a government email domain to <a href="mailto:lawenforcement@streamvault.example">lawenforcement@streamvault.example</a>, or by post to: Legal Department, StreamVault Ltd., 123 Example Street, Suite 100, Example City, EX 00000. We do not accept requests via social media or phone.'),
+        'Official requests should be submitted from a government email domain to <a href="mailto:lawenforcement@midnightclips.example">lawenforcement@midnightclips.example</a>, or by post to: Legal Department, Midnight Clips Ltd., 123 Example Street, Suite 100, Example City, EX 00000. We do not accept requests via social media or phone.'),
       sec('2. What We Require',
         ul('<strong>Basic subscriber information:</strong> valid subpoena or equivalent legal process',
           '<strong>Non-content records</strong> (e.g., IP logs): court order or equivalent',
@@ -287,7 +287,7 @@ export const LEGAL_PAGES = {
 
   'content-guidelines': {
     title: 'Content Guidelines',
-    intro: '<p>These guidelines define what may and may not be published on StreamVault. They apply to videos, thumbnails, titles, descriptions, comments, and channel art.</p>',
+    intro: '<p>These guidelines define what may and may not be published on Midnight Clips. They apply to videos, thumbnails, titles, descriptions, comments, and channel art.</p>',
     body: [
       sec('1. Not Allowed',
         ul('Illegal content of any kind (see <a href="/illegal-content-reporting">Illegal Content Reporting Policy</a>)',
@@ -310,7 +310,7 @@ export const LEGAL_PAGES = {
 
   'cookie-notice': {
     title: 'Cookie Notice',
-    intro: '<p>This notice explains how StreamVault uses cookies and similar technologies, and how you can control them.</p>',
+    intro: '<p>This notice explains how Midnight Clips uses cookies and similar technologies, and how you can control them.</p>',
     body: [
       sec('1. What Are Cookies',
         'Cookies are small text files stored on your device. We also use localStorage and similar technologies; this notice covers all of them.'),
@@ -326,7 +326,7 @@ export const LEGAL_PAGES = {
       sec('4. Retention',
         'Session cookies expire when you close your browser. Persistent cookies last from 30 days (analytics) up to 12 months (preferences). Consent is re-requested at least every 12 months.'),
       sec('5. Contact',
-        'Questions: <a href="mailto:privacy@streamvault.example">privacy@streamvault.example</a>. See also our <a href="/privacy">Privacy Policy</a>.'),
+        'Questions: <a href="mailto:privacy@midnightclips.example">privacy@midnightclips.example</a>. See also our <a href="/privacy">Privacy Policy</a>.'),
     ].join(''),
   },
 }

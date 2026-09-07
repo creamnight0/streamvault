@@ -266,7 +266,7 @@ export default function StreamPlayer({
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
             <div style={{ fontSize: 15, fontWeight: 800, color: '#fff', display: 'flex', alignItems: 'center', gap: 8 }}>
-              <Sparkles size={16} style={{ color: 'var(--brand)' }} /> Suggested on StreamVault
+              <Sparkles size={16} style={{ color: 'var(--brand)' }} /> Suggested on Midnight Clips
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
               <button
@@ -402,7 +402,7 @@ export default function StreamPlayer({
         </div>
       )}
 
-      {/* StreamVault Brand Shield (Click routes to Homepage) */}
+      {/* Midnight Clips Brand Shield (Click routes to Homepage) */}
       <div
         role="button"
         tabIndex={0}
@@ -411,7 +411,7 @@ export default function StreamPlayer({
           e.preventDefault()
           navigate('/')
         }}
-        title="StreamVault Home"
+        title="Midnight Clips Home"
         style={{
           position: 'absolute',
           bottom: 14,
@@ -425,7 +425,7 @@ export default function StreamPlayer({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: 5,
+          gap: 6,
           fontSize: 10.5,
           fontWeight: 800,
           color: '#fff',
@@ -444,8 +444,8 @@ export default function StreamPlayer({
           e.currentTarget.style.background = 'rgba(15, 12, 10, 0.95)'
         }}
       >
-        <span style={{ color: 'var(--brand)', fontSize: 9 }}>▶</span>
-        STREAM<span style={{ color: 'var(--brand)' }}>VAULT</span>
+        <img src="/logo.png" alt="Midnight Clips" style={{ width: 14, height: 14, borderRadius: '50%', objectFit: 'cover' }} />
+        MIDNIGHT<span style={{ color: 'var(--brand)' }}>CLIPS</span>
       </div>
 
       {isLive && (

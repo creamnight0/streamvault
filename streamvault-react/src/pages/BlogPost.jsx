@@ -9,7 +9,7 @@ export default function BlogPost() {
     <article className="article">
       <span className="tag">{p.tag}</span>
       <h1>{p.title}</h1>
-      <div className="date">{p.date} · StreamVault Team</div>
+      <div className="date">{p.date} · Midnight Clips Team</div>
       <div className="cover" style={{ background: `linear-gradient(135deg,${p.grad[0]},${p.grad[1]})` }}>
         <p.icon size={54} strokeWidth={1.3} />
       </div>

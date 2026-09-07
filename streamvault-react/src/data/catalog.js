@@ -202,7 +202,7 @@ export const MODELS = [
 ]
 
 export const CREATORS = [
-  { id: 'streamvault',   name: 'StreamVault Studio', verified: true,  subs: '—',    icon: PlaySquare, grad: ['#c62b4a', '#8f1d38'], about: 'Official uploads from the StreamVault team.' },
+  { id: 'streamvault',   name: 'Midnight Clips Studio', verified: true,  subs: '—',    icon: PlaySquare, grad: ['#c62b4a', '#8f1d38'], about: 'Official uploads from the Midnight Clips team.' },
   ...MODELS.map((m) => ({
     id: m.id,
     name: m.name,
@@ -274,18 +274,18 @@ export const VIDEOS = [
 
 export const BLOG_POSTS = [
   { slug: 'launch', tag: 'Announcements', icon: Megaphone, grad: ['#c62b4a', '#6e1428'], date: 'September 4, 2026',
-    title: 'Welcome to the all-new StreamVault',
+    title: 'Welcome to the all-new Midnight Clips',
     excerpt: 'A faster player, a cleaner design, and a home for the content you actually want to watch.',
     body: [
-      "Today we're rolling out the biggest redesign in StreamVault's history: a brand-new light interface, a faster player, and a smarter home page that puts categories one click away.",
+      "Today we're rolling out the biggest redesign in Midnight Clips's history: a brand-new light interface, a faster player, and a smarter home page that puts categories one click away.",
       'Every video is now transcoded through our quality-first pipeline, which means smaller files and faster starts with no visible quality loss — even on mobile data.',
       'We built this for viewers first: no clutter, no dark patterns, and a Report button on every single video. Have feedback? We read everything sent to the Help Center.',
     ] },
   { slug: 'trending-desi', tag: 'Spotlight', icon: Flame, grad: ['#c2711d', '#8f1d38'], date: 'September 2, 2026',
-    title: 'Trending: the rise of Desi creators on StreamVault',
+    title: 'Trending: the rise of Desi creators on Midnight Clips',
     excerpt: "Food crawls, tabla lessons, wedding vlogs — South Asian creators are having a moment. Here's what's blowing up.",
     body: [
-      'From Mumbai street-food marathons to classical music tutorials, Desi content is the fastest-growing category on StreamVault this quarter.',
+      'From Mumbai street-food marathons to classical music tutorials, Desi content is the fastest-growing category on Midnight Clips this quarter.',
       "Our new Desi category collects the best of it in one place — every video uploaded by its rightful creator, with full consent and licensing on record. That's a hard rule, not a nice-to-have.",
       'Want your work featured? Publish through the studio panel, tag it accurately, and our editorial team reviews the top performers every Friday.',
     ] },
@@ -293,7 +293,7 @@ export const BLOG_POSTS = [
     title: 'How we compress video without killing quality',
     excerpt: 'Inside the encoding ladder: AV1, per-title optimization, and why your uploads look better at half the bitrate.',
     body: [
-      'When you upload to StreamVault, your master file is analyzed scene by scene. Complex, high-motion scenes get more bits; static talking-head shots get fewer. This is called per-title encoding.',
+      'When you upload to Midnight Clips, your master file is analyzed scene by scene. Complex, high-motion scenes get more bits; static talking-head shots get fewer. This is called per-title encoding.',
       'We encode an AV1 and H.265 ladder from 240p up to the source resolution, capped at visually-lossless quality targets (VMAF 95+). The result: files typically 40–60% smaller than the upload with no perceptible difference.',
       'Originals are archived untouched, so as codecs improve we can re-encode your whole library from the pristine source.',
     ] },
@@ -301,7 +301,7 @@ export const BLOG_POSTS = [
     title: 'Our safety commitments, in plain language',
     excerpt: 'Age assurance, consent records, hash-matching, and a real appeals process — what we do and why.',
     body: [
-      "Every platform says it takes safety seriously. Here's what that concretely means at StreamVault: every upload is hash-checked against illegal-content databases before it publishes, and every video carries a Report button that routes to a 24/7 queue.",
+      "Every platform says it takes safety seriously. Here's what that concretely means at Midnight Clips: every upload is hash-checked against illegal-content databases before it publishes, and every video carries a Report button that routes to a 24/7 queue.",
       'Age-restricted material sits behind real age assurance — not just a checkbox — in regions that require it, and our full policy library is public: from the Child Safety Policy to Complaints & Appeals.',
       'Consent and licensing records are required for everything we publish, kept for the life of the content plus seven years.',
     ] },

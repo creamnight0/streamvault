@@ -5,7 +5,7 @@ const PLANS = [
   { name: 'Free', price: '$0', per: '/month', cta: 'Get Started', btn: 'btn-ghost',
     features: ['Unlimited watching in HD', 'Comment, like & subscribe', 'Save playlists & watch history', 'Ad-supported'] },
   { name: 'Premium', price: '$7.99', per: '/month', cta: 'Try 30 Days Free', btn: 'btn-solid', featured: true,
-    features: ['Everything in Free', 'No ads, ever', '4K & HDR streaming', 'Offline downloads', 'Exclusive StreamVault Originals'] },
+    features: ['Everything in Free', 'No ads, ever', '4K & HDR streaming', 'Offline downloads', 'Exclusive Midnight Clips Originals'] },
   { name: 'VIP Annual', price: '$59.99', per: '/year', cta: 'Go VIP', btn: 'btn-outline',
     features: ['Everything in Premium', 'Two months free vs. monthly', 'Early access to Originals', 'VIP badge in comments', 'Priority support'] },
 ]

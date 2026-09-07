@@ -351,7 +351,7 @@ function UploadPanel({ disabled, onPublished, categories, models, creators, onAd
           </button>
         </div>
         <select value={form.creator} onChange={set('creator')} disabled={busy}>
-          <option value="streamvault">StreamVault Studio (Official)</option>
+          <option value="streamvault">Midnight Clips Studio (Official)</option>
           {models.map((m) => (
             <option key={m.id} value={m.id}>
               ⭐ {m.name} {m.verified ? '✓' : ''} ({m.category || 'model'})

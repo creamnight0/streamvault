@@ -13,7 +13,7 @@ const TILES = [
   ['/age-assurance', UserCheck, 'Age Assurance', 'How age checks work'],
   ['/uk-users', MapPin, 'UK Users', 'Online Safety Act information'],
   ['/law-enforcement', Landmark, 'Law Enforcement', 'Legal request procedures'],
-  ['/content-guidelines', ScrollText, 'Content Guidelines', "What's allowed on StreamVault"],
+  ['/content-guidelines', ScrollText, 'Content Guidelines', "What's allowed on Midnight Clips"],
   ['/content-submission-guidelines', Send, 'Submission Guidelines', 'Technical & policy requirements'],
   ['/content-production-guide', Clapperboard, 'Production Guide', 'Best practices for creators'],
   ['/cookie-notice', Cookie, 'Cookie Notice', 'How we use cookies'],

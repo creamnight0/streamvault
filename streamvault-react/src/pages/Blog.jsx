@@ -4,7 +4,7 @@ import { BLOG_POSTS } from '../data/catalog.js'
 export default function Blog() {
   return (
     <div className="container">
-      <h1 className="page-title">The StreamVault Blog</h1>
+      <h1 className="page-title">The Midnight Clips Blog</h1>
       <p className="page-sub">Product news, creator spotlights, and the engineering behind the player.</p>
       <div className="blog-grid">
         {BLOG_POSTS.map((p) => (

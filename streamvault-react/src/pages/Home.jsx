@@ -27,7 +27,7 @@ export default function Home() {
       <section className="hero">
         <h1>Premium videos, <em>hand-picked</em> and beautifully streamed</h1>
         <p>
-          Every video on StreamVault is uploaded by our own studio — curated, quality-checked,
+          Every video on Midnight Clips is uploaded by our own studio — curated, quality-checked,
           and compressed without losing a pixel.
         </p>
         <Link className="btn btn-solid" to="/videos"><Play size={15} fill="currentColor" /> Start Watching</Link>
@@ -84,7 +84,7 @@ export default function Home() {
             />
             <Row
               icon={Star}
-              title="StreamVault Originals"
+              title="Midnight Clips Originals"
               to="/videos"
               videos={vids.filter((v) => v.exclusive).slice(0, 4)}
             />

@@ -28,11 +28,20 @@ export const LEGAL_LINKS = [
 
 export function Logo({ small }) {
   return (
-    <Link className="logo" to="/" style={small ? { fontSize: 19 } : undefined}>
-      <span className="mark" style={small ? { width: 30, height: 30 } : undefined}>
-        <Play size={small ? 14 : 17} fill="currentColor" />
-      </span>
-      STREAM<b>VAULT</b>
+    <Link className="logo" to="/" style={small ? { fontSize: 18 } : undefined}>
+      <img
+        src="/logo.png"
+        alt="Midnight Clips"
+        style={{
+          width: small ? 28 : 36,
+          height: small ? 28 : 36,
+          borderRadius: '50%',
+          objectFit: 'cover',
+          display: 'block',
+          boxShadow: '0 2px 10px rgba(168, 85, 247, 0.35)',
+        }}
+      />
+      <span>MIDNIGHT<b>CLIPS</b></span>
     </Link>
   )
 }
@@ -134,7 +143,7 @@ export function Footer() {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} StreamVault. All rights reserved. 18+ only. Demo site — for design purposes only.</span>
+        <span>© {new Date().getFullYear()} Midnight Clips. All rights reserved. 18+ only. Demo site — for design purposes only.</span>
         <span>
           <Link to="/terms">Terms</Link> · <Link to="/privacy">Privacy</Link> ·{' '}
           <Link to="/cookie-notice">Cookies</Link> · <Link to="/content-removal">Content Removal</Link>
